@@ -1,38 +1,33 @@
 class Beemr < Formula
-  desc "Peer-to-peer file and message sharing. No servers, no accounts, no setup"
+  desc "Peer-to-peer file sharing. No servers, no accounts, no setup"
   homepage "https://github.com/osmanahmadxai/beemr"
-  version "0.2.2"
+  version "0.3.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/osmanahmadxai/beemr/releases/download/v0.2.2/beemr-macos-aarch64"
-      sha256 "73317e0cd9a0a053ef3d0fe38f0e62acbe8c52b92ed369cb260049d8fd90335d"
+      url "https://github.com/osmanahmadxai/beemr/releases/download/v0.3.0/beemr-macos-aarch64"
+      sha256 "d80ecc078c476bfd1ff6c4096066ece29cff73fa3a183ccb9978bbf9c0f3ffde"
     end
     on_intel do
-      url "https://github.com/osmanahmadxai/beemr/releases/download/v0.2.2/beemr-macos-x86_64"
-      sha256 "cda598bcf6b9e610bdb150a9e115d75de3e94b0e15a5176360cf009dd8a576c2"
+      url "https://github.com/osmanahmadxai/beemr/releases/download/v0.3.0/beemr-macos-x86_64"
+      sha256 "c36af03900e65d9264c66b79f9c2e0b660b2757593d61f266fd4672a5dd9fcba"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/osmanahmadxai/beemr/releases/download/v0.2.2/beemr-linux-aarch64"
-      sha256 "f21ee09c2eaabb91842525ad48cc7b619babed1f9080ac1c46f5204dea79f59f"
+      url "https://github.com/osmanahmadxai/beemr/releases/download/v0.3.0/beemr-linux-aarch64"
+      sha256 "c1777764c9d4499464352fa1364df500e8f554fee23734f0609bcf4d6b60c82b"
     end
     on_intel do
-      url "https://github.com/osmanahmadxai/beemr/releases/download/v0.2.2/beemr-linux-x86_64"
-      sha256 "e1a8eb9b8e37fd6604fa3cd80d2c4a5810292ab15080f52e72df6aea8b0004d8"
+      url "https://github.com/osmanahmadxai/beemr/releases/download/v0.3.0/beemr-linux-x86_64"
+      sha256 "dc64bcb8236d33fecc717a12c11a0527e9c02a3ca7fe179a712c523d3fdcefb8"
     end
   end
 
   def install
     bin.install Dir["beemr-*"].first => "beemr"
-  end
-
-  service do
-    run [opt_bin/"beemr", "daemon", "run"]
-    keep_alive true
   end
 
   test do
